@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/metro.css')
+    link(rel='stylesheet', href='/stylesheets/metro-responsive.css')
+    link(rel='stylesheet', href='/stylesheets/metro-schemes.css')
+    link(rel='stylesheet', href='/stylesheets/metro-icons.css')
+    link(rel='stylesheet', href='/stylesheets/metro-colors.css')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/metro.js')
+    script(src='/javascripts/jquery-2.1.3.min.js')    
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(charset='utf-8')
+    style.
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      } 
+  body.bg-grayDark
+    div             
+      header.app-bar.fixed-top.navy.bg-gray(date-role='appbar' style='margin-top: 0.5rem;')
+        div#menu.container
+          ul.horizontal-menu.compact.small-dropdown.bg-gray(style='width:auto;')
+            li.bg-gray.fg-lightRed
+              a(href='#') Inicio
+            li.bg-gray.fg-lightRed
+              a.dropdown-toggle(href='#') Categorías...
+              ul.d-menu(data-role='dropdown', style='display: none;')
+                li.bg-gray
+                  a(href='#') Sociales
+                li.bg-gray
+                  a(href='#') Culturales
+                li.bg-gray
+                  a.dropdown-toggle(href='#') Deportivos...
+                  ul.d-menu(data-role='dropdown')
+                    li.bg-gray
+                      a(href='#') Futball Soccer
+                    li.bg-gray
+                      a(href='#') VoleyBall
+            li.bg-gray.fg-lightRed
+              a(href='#') Ranking
+            li.bg-gray.fg-lightRed
+              a(href='#') Sobre Nosotros
+            li.bg-gray.fg-lightRed
+              a.dropdown-toggle(href='#') Usuario...
+              ul.d-menu(data-role='dropdown')
+                li.bg-gray
+                  a(href='#') Perfil
+                li.bg-gray
+                  a(href='#') Mis Eventos
+                li.bg-gray
+                  a(href='#') Amigos
+                li.bg-gray
+                  a(href='#') Salir
+          span.app-bar-pull
+          div.app-bar-pullbutton.automatic(style='display: none;')
+                    span.mif-plus
+          div.clearfix(style='width: 0;') 
+          nav.app-bar-pullmenu.hidden.flexstyle-app-bar-menu(style='display: none;')
+            ul.app-bar-pullmenubar.app-bar-menu.hidden(style='display: none;')
+    div.container.page-content(style='height:100%; width:auto; margin-top: 2.125rem; margin-Bottom: -6.125rem;')
+      h1.fg-lightRed(style='margin-top: 2.125rem;') xEventGO
+       small   Muy Pronto ...!
+      #ContenedorTotal.flex-grid(style='height:90%; width:auto;')
+        block content
