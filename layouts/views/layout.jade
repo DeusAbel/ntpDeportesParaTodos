@@ -1,0 +1,28 @@
+!!! 5
+html
+   head
+    title Test Application
+    link(type='text/css', rel='stylesheet', href='/css/site.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js');
+
+body
+    div.navbar.navbar-inverse.navbar-fixed-top
+       div.navbar-inner
+         div.container
+            button.btn.btn-navbar(type='button', data-toggle='collapse', data-   target='.nav-collapse')
+               span.icon-bar
+               span.icon-bar
+               span.icon-bar
+            a.brand(href='#') Login Test Application
+            div.nav-collapse.collapse
+              ul.nav
+                li.active 
+                  a(href='#') Home
+                li 
+                  a(href='#about') About
+                li 
+                  a(href='#Contact') Contact
+     div.container             
+        block content

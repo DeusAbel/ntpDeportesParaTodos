@@ -1,0 +1,16 @@
+extends layout
+block content
+  form(method='get', role='form', action='/usuarios')
+    p
+      h2 REGISTRO DE USUARIO
+    p
+      h3 Nombres: 
+      input#nombre(type='text')  
+    p
+      h3 Correo Electr&oacute;nico: 
+      input#email(type='text')
+    p
+      h3 Contrase&ntilde;a:
+      input#password(type='password')
+    p
+      input#Submit1(type='submit', value='Registrar')

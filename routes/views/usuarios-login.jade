@@ -1,0 +1,119 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+      
+  #c-forms-layout-container
+    #c-forms-heading.c-forms-heading.c-forms-layout-element-selected(data-settings-editor='#c-forms-settings-form', tabindex='0', sys:attach='dataview', dataview:data='{binding currentForm, source={{ Cognito.Forms.model }} }')
+      h2
+        label.c-forms-heading-link Ingreso de Usuario
+      .c-forms-description
+      .c-progress-section.toggle-off(style='display: none;')
+        .c-forms-progress.c-progress-steps
+          ol
+            li.c-page-selected
+              span P&aacute;gina 1
+    #c-forms-layout-elements.c-forms-layout-section(data-colspan='24', data-uuid='0')
+      .c-forms-row
+        .c-quick-insert.c-quick-insert-row(style='', tabindex='0', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+          .plus
+            i.icon-plus
+          .line
+        .c-columns
+          .c-forms-layout-element.c-field.c-forms-layout-field(tabindex='0', draggable='true', ondragstart='Cognito.Forms.dragStart(event)', ondragover='Cognito.Forms.dragOver(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)', ondragend='Cognito.Forms.dragEnd(event)', data-colspan='12', data-column='1', data-isvisible='true', data-field='IngreseSuEmail', data-tag='field', data-type='Text', data-uuid='1', data-hover='false')
+            .c-label
+              label Ingrese su E-mail
+              i.c-forms-layout-required
+              .c-icons
+            .c-editor
+              .c-forms-layout-control.field.c-forms-layout-singleline usuario@mail.com
+            .c-helptext Ingrese su coreo electronico
+            .c-col-resizer(onmousedown='Cognito.Forms.resizeDragStart(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+            .c-quick-insert(style='', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+              .plus
+                i.icon-plus
+              .line
+          .c-forms-layout-element.c-forms-layout-placeholder.c-static(tabindex='0', data-colspan='12', data-column='25', draggable='true', ondragstart='Cognito.Forms.dragStart(event)', ondragover='Cognito.Forms.dragOver(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)', ondragend='Cognito.Forms.dragEnd(event)')
+            .c-col-resizer(onmousedown='Cognito.Forms.resizeDragStart(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+            .c-quick-insert(style='', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+              .plus
+                i.icon-plus
+              .line
+            .c-forms-placeholder-plus
+              i.icon-plus
+      .c-forms-row
+        .c-quick-insert.c-quick-insert-row(style='', tabindex='0', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+          .plus
+            i.icon-plus
+          .line
+        .c-columns
+          .c-forms-layout-element.c-field.c-forms-layout-field(tabindex='0', draggable='true', ondragstart='Cognito.Forms.dragStart(event)', ondragover='Cognito.Forms.dragOver(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)', ondragend='Cognito.Forms.dragEnd(event)', data-colspan='12', data-column='1', data-isvisible='true', data-field='Contraseña', data-tag='field', data-type='Text', data-uuid='2', data-hover='false')
+            .c-label
+              label Contrase&ntilde;a
+              i.c-forms-layout-required
+              .c-icons
+            .c-editor
+              .c-forms-layout-control.field.c-forms-layout-singleline *
+            .c-helptext Ingrese su contrase&ntilde;a
+            .c-col-resizer(onmousedown='Cognito.Forms.resizeDragStart(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+            .c-quick-insert(style='', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+              .plus
+                i.icon-plus
+              .line
+          .c-forms-layout-element.c-forms-layout-placeholder.c-static(tabindex='0', data-colspan='12', data-column='25', draggable='true', ondragstart='Cognito.Forms.dragStart(event)', ondragover='Cognito.Forms.dragOver(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)', ondragend='Cognito.Forms.dragEnd(event)')
+            .c-col-resizer(onmousedown='Cognito.Forms.resizeDragStart(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+            .c-quick-insert(style='', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+              .plus
+                i.icon-plus
+              .line
+            .c-forms-placeholder-plus
+              i.icon-plus
+      .c-forms-row
+        .c-quick-insert.c-quick-insert-row(style='display: none;', tabindex='0', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+          .plus
+            i.icon-plus
+          .line
+        .c-columns
+          .c-forms-layout-element.c-forms-layout-placeholder.c-static(tabindex='0', data-colspan='12', data-column='13', draggable='true', ondragstart='Cognito.Forms.dragStart(event)', ondragover='Cognito.Forms.dragOver(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)', ondragend='Cognito.Forms.dragEnd(event)', data-hover='false')
+            .c-col-resizer(onmousedown='Cognito.Forms.resizeDragStart(event)', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+            .c-quick-insert(style='', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+              .plus
+                i.icon-plus
+              .line
+            .c-forms-placeholder-plus
+              i.icon-plus
+      .c-forms-row
+        .c-columns.c-full.c-no-add
+          #c-forms-payment.c-forms-payment.clearfix(data-settings-editor='#c-forms-settings-payment', data-colspan='2', style='display: none;')
+            #c-forms-payment-order
+            #c-forms-payment-ad(data-colspan='2', style='display: none;')
+              .c-span-2.payment.c-editor.c-forms-payment-off
+                h2 Collecting payments is easy!
+                .c-section.c-col-1.c-span-1
+                  p
+                  h3 PayPal or Stripe
+                  p
+                .c-section.c-col-2.c-span-1.fee
+                  div
+                    img(src='https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png', alt='PayPal')
+                  div(style='margin-top:20px;')
+                    img(sys:src="{{ Cognito.config.formsUrl + '/Content/Images/stripe-logo.png' }}", alt='stripe', src='https://www.cognitoforms.com//Content/Images/stripe-logo.png', width='200')
+              .c-section.c-forms-payment-no-field
+                .c-col-1.c-span-2
+                  h2 OH......so close
+                  p
+                  p
+                    i.icon-credit-card
+          .c-forms-layout-element.c-field.c-forms-layout-pagebreak(tabindex='0', data-colspan='24', data-column='1', data-nextbuttontext='Entrar', data-confirmationmessage='Gracias por llenar el formulario. Su respuesta ha sido registrada.', data-issubmission='true', data-showbackbutton='false', data-pagenumber='1', data-tag='pageBreak', data-type='PageBreak', data-pagetitle='Página 1', data-uuid='3', data-hover='false')
+            .c-forms-pagebreak-buttons
+              .c-button.c-save(tabindex='-1') Entrar
+            .c-forms-page-number
+            .c-forms-pagebreak-divider
+              .c-forms-pagebreak-divider-top
+              .c-forms-pagebreak-divider-bottom
+            .c-forms-confirmation.c-html Gracias por llenar el formulario. Su respuesta ha sido registrada.
+            .c-quick-insert(style='', ondragenter='Cognito.Forms.dragEnter(event)', ondragleave='Cognito.Forms.dragLeave(event)', ondrop='Cognito.Forms.dragDrop(event)')
+              .plus
+                i.icon-plus
+              .line
