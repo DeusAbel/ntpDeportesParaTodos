@@ -2,9 +2,6 @@ var mongoose = require( 'mongoose' );
 var gracefulShutdown;
 //var dbURI = 'mongodb://localhost/xeventgo';
 var dbURI = 'mongodb://admin:episunsa@ds050879.mlab.com:50879/ntpdeporteparatodos';
-if (process.env.NODE_ENV === 'production') {
-    dbURI = process.env.MONGOLAB_URI;
-}
 
 mongoose.Promise = global.Promise;
 
