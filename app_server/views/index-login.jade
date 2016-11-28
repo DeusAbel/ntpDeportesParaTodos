@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/metro.css')
+    link(rel='stylesheet', href='/stylesheets/metro-responsive.css')
+    link(rel='stylesheet', href='/stylesheets/metro-schemes.css')
+    link(rel='stylesheet', href='/stylesheets/metro-icons.css')
+    link(rel='stylesheet', href='/stylesheets/metro-colors.css')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/metro.js')
+    script(src='/javascripts/jquery-2.1.3.min.js')    
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='theme-color', content='#9A1616')
+    meta(charset='utf-8')
+    style.
+      html, body, {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      } 
+  body.bg-lightRed
+    div.container.page-content.flex-content-center.bg-lightRed(style='height:100%; width:100%;margin:0px; padding:0px')     
+      #ContenedorTotal.flex-grid.flex-just-center(style='height:100%; width:auto; margin:0px; padding:0px;')
+        //contenido
+        div#Container6.row.flex-just-center.flex-align-center.flex-content-center.bg-darkRed(style='width:auto; height:30% ')             
+            div#cell1.cell.size1(style='width:auto; height:100%; margin:0px; align-content:center')
+                img(src='../images/go.png', style='display: inline-block; margin:0px; padding:20px ')
+        
+        div#Container7.row.flex-just-center.flex-align-center.flex-content-center(style='width:auto;')
+            div#cell2.cell.colspan1(style='width:auto; margin:0px; text-align:center')
+                h6
+                    small.fg-white(style='display: inline-block;')  Español - Inglés - Portugués                                       
+                |<br/> <br/> <br/> <br/>
+        div#Container8.row.flex-just-center.cell-auto-size(style='width:auto; ')            
+                                
+            div#cell2.cell.colspan4
+                .panel.bg-lightRed
+                    .content.bg-lightRed(style='margin:0px 15px 0px 15px;')
+                        form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/usuarios/login", method="post")
+                            //usuario
+                            .input-control.modern.text.iconic.full-size.required(data-role='input')
+                                input.fg-white(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='usuario',name='usuario', style='width:95%;' )
+                                span.input-state-error.mif-warning
+                                span.input-state-success.mif-checkmark    
+                                span.label.fg-white Nombre de Usuario
+                                span.informer.fg-white Ingrese Nombre de Usuario
+                                span.placeholder.fg-white Usuario
+                                span.icon.mif-user.fg-white
+                                button.button.helper-button.clear
+                                    span.mif-cross
+                            //pass
+                            
+                            .input-control.modern.text.iconic.required.full-size(data-role='input')
+                                input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', id='password',name='password', style='width:95%;')
+                                span.input-state-error.mif-warning
+                                span.input-state-success.mif-checkmark    
+                                span.label Contraseña
+                                span.informer Ingrese una Contraseña
+                                span.placeholder Contraseña
+                                span.icon.mif-key.fg-white
+                                button.button.helper-button.clear
+                                    span.mif-cross
+                            |<br/> 
+                            .align-center
+                                button.button.bl-lightRed.text-shadow(style='width:90%; opacity:0.4;') INGRESAR
+                                |<br/> <br/>        
+                                h6
+                                    small.fg-white(style='display: inline-block;')  ¿Haz olvidado la contraseña?              
+                script.
+                    function no_submit(){
+                    return false;
+                    }
+                    function notifyOnErrorInput(input){
+                    var message = input.data('validateHint');
+                    $.Notify({
+                        caption: 'Error',
+                        content: message,
+                        type: 'alert'
+                    });
+                    }
+        //footer
+    div
+        .align-center.fixed-bottom                                        
+            button.button.small-button.fg-lightGray(style='opacity:0.7; width:80% ;margin-left:auto;margin-right:auto; ' ) CREAR CUENTA NUEVA DE XEVENTGO
+            |<br/> <br/>

@@ -5,63 +5,98 @@ html
     link(rel='stylesheet', href='/stylesheets/metro.css')
     link(rel='stylesheet', href='/stylesheets/metro-responsive.css')
     link(rel='stylesheet', href='/stylesheets/metro-schemes.css')
+    link(rel='stylesheet', href='/stylesheets/metro-schemes-min.css')
     link(rel='stylesheet', href='/stylesheets/metro-icons.css')
     link(rel='stylesheet', href='/stylesheets/metro-colors.css')
+    link(rel='stylesheet', href='/stylesheets/docs.css')
     script(src='/javascripts/jquery.js')
     script(src='/javascripts/metro.js')
+    script(src='/javascripts/docs.js')
     script(src='/javascripts/jquery-2.1.3.min.js')    
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='theme-color', content='#1D1D1D')
     meta(charset='utf-8')
     style.
-      html, body {
+      html, body, {
         height: 100%;
         margin: 0;
         padding: 0;
       } 
-  body.bg-grayDark
-    div             
-      header.app-bar.fixed-top.navy.bg-gray(date-role='appbar' style='margin-top: 0.5rem;')
-        div#menu.container
-          ul.horizontal-menu.compact.small-dropdown.bg-gray(style='width:auto;')
-            li.bg-gray.fg-lightRed
-              a(href='#') Inicio
-            li.bg-gray.fg-lightRed
-              a.dropdown-toggle(href='#') Categorías...
+  body.bg-grayLight
+    div.fixed-top
+      header.app-bar.navy.bg-dark(date-role='appbar', style='box-shadow: 0px 4px 5px #555; ')
+        div#menu.container.main-menu-wrapper(style='z-index:-1;')
+          ul.m-menu.compact.bg-dark(style='margin-left:5%; margin-right:0%; box-shadow:0 0 0; margin:0; ')
+            li.bg-dark.fg-lightRed
+              img(src='../images/logo.png', style='height: 45px; padding-top:0.5rem')               
+            li.bg-dark.fg-lightRed
+              a.darkRed(onclick="toggleMetroCharm('#left-charm')") MENU                 
+            //li.bg-dark.fg-white
+              a.dropdown-toggle(href='#') Categorías
               ul.d-menu(data-role='dropdown', style='display: none;')
-                li.bg-gray
+                li.bg-dark
                   a(href='#') Sociales
-                li.bg-gray
+                li.bg-dark
                   a(href='#') Culturales
-                li.bg-gray
+                li.bg-dark
                   a.dropdown-toggle(href='#') Deportivos...
                   ul.d-menu(data-role='dropdown')
-                    li.bg-gray
+                    li.bg-dark
                       a(href='#') Futball Soccer
-                    li.bg-gray
+                    li.bg-dark
                       a(href='#') VoleyBall
-            li.bg-gray.fg-lightRed
-              a(href='#') Ranking
-            li.bg-gray.fg-lightRed
+            //li.bg-dark.fg-white
+            //  a(href='#') Ranking
+            //li.bg-dark.fg-white
               a(href='#') Sobre Nosotros
-            li.bg-gray.fg-lightRed
-              a.dropdown-toggle(href='#') Usuario...
+            li.bg-dark.fg-white.place-right            
+              a.dropdown-toggle(href='#')
+                img(src='../images/usuario.png', style='height: 20px; display: inline-block; margin-right: 10px;')
+                |Usuario
               ul.d-menu(data-role='dropdown')
-                li.bg-gray
-                  a(href='#') Perfil
-                li.bg-gray
-                  a(href='#') Mis Eventos
-                li.bg-gray
+                li.bg-dark
+                  a(href='/usuarios/login') Login
+                li.bg-dark
+                  a(href='/usuarios/registro') Registro
+                li.bg-dark
                   a(href='#') Amigos
-                li.bg-gray
+                li.bg-dark
                   a(href='#') Salir
-          span.app-bar-pull
-          div.app-bar-pullbutton.automatic(style='display: none;')
-                    span.mif-plus
-          div.clearfix(style='width: 0;') 
-          nav.app-bar-pullmenu.hidden.flexstyle-app-bar-menu(style='display: none;')
-            ul.app-bar-pullmenubar.app-bar-menu.hidden(style='display: none;')
-    div.container.page-content(style='height:100%; width:auto; margin-top: 2.125rem; margin-Bottom: -6.125rem;')
-      h1.fg-lightRed(style='margin-top: 2.125rem;') xEventGO
-       small   Muy Pronto ...!
-      #ContenedorTotal.flex-grid(style='height:90%; width:auto;')
+    div.container.page-content.bg-grayLight(style='height:100%; width:100%; padding-top:0px !important; display:block;')        
+      #ContenedorTotal.flex-grid(style='height:100%; width:100%; margin:0px; padding:0px;')
+        //contenido
+        div#Container6.row(style='width:100% ; height:5%; max-height:60px; min-height:60px; padding:0px; ')
+          .cell.size12(style='margin-top:0px;')
+                    div.charm.left-side.bg-darkRed(data-role='charm', data-position='left', id='left-charm', style='opacity:0.1!important; display:inline-block;' )
+                      |<br/><br/><br/>                
+                      ul.sidebar.bg-darkRed
+                        li
+                          a(href='/index' onclick='window.location.href="/index2"')
+                            span.mif-vpn-publ.icon
+                            span.title INICIO
+                        li
+                          a(href='#')
+                            span.mif-drive-eta.icon
+                            span.title CAMINAR
+                        li
+                          a(href='#')
+                            span.mif-cloud.icon
+                            span.title CLIMA                         
+                        li
+                          a(href='#')
+                            span.mif-database.icon
+                            span.title MIS EVENTOS
+                        li
+                          a(href='#')
+                            span.mif-cogs.icon
+                            span.title CUENTA                               
         block content
+        div#Container8.row.flex-just-center.cell-auto-size(style='width:100% ; padding:0px; height:5%; min-height:45px; max-height:45px')
+        //footer   
+    div
+      footer.fixed-bottom.bg-dark(style='box-shadow: 0px 4px 5px #AAA;')       
+        ul.f-menu.bg-dark(style='margin-left:5%; margin-right:5%;')
+          //li.bg-dark.fg-lightRed(style='margin-left:5%; margin-right:5%')
+          h4.fg-lightRed(style='margin-right:auto; margin-left:auto')
+            img(src='../images/logo.png', style='height: 30px; display: inline-block; margin-right: 10px;') 
+            | xEventGO            

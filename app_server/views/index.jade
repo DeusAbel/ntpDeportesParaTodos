@@ -1,17 +1,87 @@
-extends layout
-block content
-  div#Container6.row.flex-just-center.cell-auto-size(style='height:80%')
-    div#cell1.cell.colspan10      
-      #map(style='height:90%;')
-  script(type="text/javascript").
-    function initMap(){
-    var map = new google.maps.Map(document.getElementById('map'), {
-    disableDefaultUI: true,
-    scrollwheel: false,
-    center: {lat: -34.397, lng: 150.644}, zoom: 18
-    });
-    var infoWindow = new google.maps.InfoWindow({map: map});if (navigator.geolocation) {navigator.geolocation.getCurrentPosition(function(position) {var pos = {lat: Position.coords.latitude,lng: position.coords.longitude}; infoWindow.setPosition(pos); infoWindow.setContent('Te encuentras aqu�'); map.setCenter(pos);}, function() { handleLocationError(true, infoWindow, map.getCenter());});} else {handleLocationError(false, infoWindow, map.getCenter());}};
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {infoWindow.setPosition(pos);infoWindow.setContent(browserHasGeolocation ? 'Error: Habilita tu ubicaci�n en tu dispositivo.' : 'Error: No posees servicio de localizaci�n.');};
-  |<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASEwAz8-b0Mmg1mZdRAXcKpqhSDwrEOHo&signed_in=true&callback=initMap"
-  |   async defer>
-  |   </script>
+doctype html
+html
+    head
+        title= title    
+        link(rel='stylesheet', href='/stylesheets/metro.css')
+        link(rel='stylesheet', href='/stylesheets/metro-responsive.css')
+        link(rel='stylesheet', href='/stylesheets/metro-schemes.css')
+        link(rel='stylesheet', href='/stylesheets/metro-icons.css')
+        link(rel='stylesheet', href='/stylesheets/metro-colors.css')
+        script(src='/javascripts/jquery.js')
+        script(src='/javascripts/metro.js')
+        script(src='/javascripts/jquery-2.1.3.min.js')    
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+        meta(name='theme-color', content='#9A1616')
+        meta(charset='utf-8')
+        style.
+            html, body, {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+           
+            } 
+    body.bg-lightRed(background='../images/fondo.jpg', style='background-size: 100% 100%; background-repeat: no-repeat;background-attachment: fixed')
+        div.container.page-content(style='height:100%;padding:0; margin:0; width:100%')
+            #ContenedorTotal.flex-grid(style='width:100%;height:100%;')
+                .row(style='align-items:center; justify-content:center; width:100%; height:100%')
+                    .cell.bg-lightRed(style='height:100%; width:100%; min-width:312px; max-width:420px;')
+                        table.table(style='width:100%; margin:0px; height100%')
+                            thead.ribbed-darkRed(style='height:30%; border:0px')
+                                tr
+                                    th(style='text-align:center;')
+                                        img(src='../images/go.png', style='display: inline-block; margin:0px; padding:15px')
+                            tbody(style='height:70%;')
+                                tr
+                                    td(style='width:100%; text-align:center;')
+                                        h6
+                                            small.fg-white Español - Inglés - Portugués   
+                                        |<br/>
+                                        .panel.bg-lightRed
+                                            .content.bg-lightRed
+                                                form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/usuarios/login", method="post")
+                                                    //usuario
+                                                    
+                                                    .input-control.modern.text.iconic.full-size.required(data-role='input')
+                                                        input.fg-white(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='usuario',name='usuario', style='width:95%')
+                                                        span.input-state-error.mif-warning
+                                                        span.input-state-success.mif-checkmark    
+                                                        span.label.fg-white Nombre de Usuario
+                                                        span.informer.fg-white Ingrese Nombre de Usuario
+                                                        span.placeholder.fg-white Usuario
+                                                        span.icon.mif-user.fg-white
+                                                        button.button.helper-button.clear
+                                                            span.mif-cross
+                                                    //pass
+
+                                                    .input-control.modern.text.iconic.required.full-size(data-role='input')
+                                                        input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', id='password',name='password',style='width:95%')
+                                                        span.input-state-error.mif-warning
+                                                        span.input-state-success.mif-checkmark    
+                                                        span.label Contraseña
+                                                        span.informer Ingrese una Contraseña
+                                                        span.placeholder Contraseña
+                                                        span.icon.mif-key.fg-white
+                                                        button.button.helper-button.clear
+                                                            span.mif-cross
+                                                    |<br/> <br/>
+                                                    .align-center
+                                                        button.button.bl-lightRed.text-shadow(style='width:95%; opacity:0.4;') INGRESAR
+                                                        |<br/>
+                                                        h6
+                                                            small.fg-white(style='display: inline-block;')  ¿Haz olvidado la contraseña?   
+                                                        |<br/> <br/> <br/> <br/>
+                                        .align-center.fixed-bottom                                    
+                                            a.button.small-button.fg-lightGray(href='/registro',style='opacity:0.7; width:95% ;margin-left:auto;margin-right:auto; ' ) CREAR CUENTA NUEVA DE XEVENTGO
+                                            |<br/><br/>   
+                                        script.
+                                            function no_submit(){
+                                            return false;
+                                            }
+                                            function notifyOnErrorInput(input){
+                                            var message = input.data('validateHint');
+                                            $.Notify({
+                                                caption: 'Error',
+                                                content: message,
+                                                type: 'alert'
+                                            });
+                                            }

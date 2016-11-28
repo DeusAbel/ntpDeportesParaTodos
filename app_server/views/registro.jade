@@ -1,0 +1,100 @@
+doctype html
+html
+    head
+        title= title    
+        link(rel='stylesheet', href='/stylesheets/metro.css')
+        link(rel='stylesheet', href='/stylesheets/metro-responsive.css')
+        link(rel='stylesheet', href='/stylesheets/metro-schemes.css')
+        link(rel='stylesheet', href='/stylesheets/metro-icons.css')
+        link(rel='stylesheet', href='/stylesheets/metro-colors.css')
+        script(src='/javascripts/jquery.js')
+        script(src='/javascripts/metro.js')
+        script(src='/javascripts/jquery-2.1.3.min.js')    
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+        meta(name='theme-color', content='#9A1616')
+        meta(charset='utf-8')
+        style.
+            html, body, {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+           
+            } 
+    body.bg-lightRed(background='../images/fondo.jpg', style='background-size: 100% 100%; background-repeat: no-repeat;background-attachment: fixed')
+        div.container.page-content(style='height:100%;padding:0; margin:0; width:100%')
+            #ContenedorTotal.flex-grid(style='width:100%;height:100%;')
+                .row(style='align-items:center; justify-content:center; width:100%; height:100%')
+                    .cell.bg-lightRed(style='height:100%; width:100%; min-width:312px; max-width:420px;')
+                        table.table(style='width:100%; margin:0px; height100%')
+                            thead.ribbed-darkRed(style='height:30%; border:0px')
+                                tr
+                                    th(style='text-align:center;')
+                                        img(src='../images/go.png', style='display: inline-block; margin:0px; padding:15px')
+                            tbody(style='height:70%; margin-top:0px; padding-top:0px')
+                                tr
+                                    td(style='width:100%; text-align:center; margin-top:0px; padding-top:0px')
+                                        h6(style='width:100%; text-align:center; padding-top:0px')
+                                            small.fg-white(style='width:100%; text-align:center; padding-top:0px') Español - Inglés - Portugués   
+                                        |<br/>
+                                        .panel.bg-lightRed(style='width:100%; text-align:center; padding-top:0px')
+                                            .content.bg-lightRed(style='margin-top:0px; padding-top:0px')                                               
+                                                form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/usuarios/registro", method="post", style='margin-top:0px; padding-top:0px')
+                                                    //usuario                                                  
+                                                    .input-control.modern.text.iconic.full-size.required(data-role='input', style='margin-top:0px; padding-top:0px')
+                                                        input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='nombre', name='nombre', style='width:95%')
+                                                        span.input-state-error.mif-warning
+                                                        span.input-state-success.mif-checkmark    
+                                                        span.label Nombre de Usuario
+                                                        span.informer Nombre de Usuario
+                                                        span.placeholder Usuario
+                                                        span.icon.mif-user
+                                                        button.button.helper-button.clear.bg-lightRed
+                                                            span.mif-cross
+                                                    //Nombres
+                                                    .input-control.modern.text.iconic.required.full-size(data-role='input', style='margin-top:0px; padding-top:0px')
+                                                        input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='email', id='correo', name='correo', style='width:95%')
+                                                        span.input-state-error.mif-warning
+                                                        span.input-state-success.mif-checkmark    
+                                                        span.label correo
+                                                        span.informer correo
+                                                        span.placeholder correo
+                                                        span.icon.mif-user
+                                                        button.button.helper-button.clear.bg-lightRed
+                                                            span.mif-cross
+                                                    //email
+                                                    .input-control.modern.text.iconic.required.full-size(data-role='input', style='margin-top:0px; padding-top:0px')
+                                                        input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', id='password', name='password', style='width:95%')
+                                                        span.input-state-error.mif-warning
+                                                        span.input-state-success.mif-checkmark    
+                                                        span.label Password
+                                                        span.informer Password
+                                                        span.placeholder Password
+                                                        span.icon.mif-contacts-mail
+                                                        button.button.helper-button.clear.bg-lightRed
+                                                            span.mif-cross
+                                                    //pass
+                                                    .input-control.modern.password.iconic.required.full-size(data-role='input', style='margin-top:0px; padding-top:0px')
+                                                        input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='sexo', name='sexo', style='width:95%')
+                                                        span.input-state-error.mif-warning
+                                                        span.input-state-success.mif-checkmark    
+                                                        span.label sexo
+                                                        span.informer sexo
+                                                        span.placeholder sexo
+                                                        span.icon.mif-key
+                                                        button.button.helper-button.reveal.bg-lightRed
+                                                            span.mif-looks
+                                                    .align-center
+                                                        |<br/>
+                                                        button.button.bl-lightRed.text-shadow(style='width:95%; opacity:0.4;') REGISTRAR                    
+                                            script.
+                                                function no_submit(){
+                                                return false;
+                                                }
+                                                function notifyOnErrorInput(input){
+                                                var message = input.data('validateHint');
+                                                $.Notify({
+                                                    caption: 'Error',
+                                                    content: message,
+                                                    type: 'alert'
+                                                });
+                                                }                           

@@ -1,0 +1,51 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+  div#Container6.row.flex-just-center.cell-auto-size(style='height:100%; width:auto;')
+    div#cell1.cell.colspan4
+      |<br/> <br/> 
+      .panel.bg-grayLight
+        .heading
+          span.icon.mif-user-plus
+          span.title Login
+        .content.bg-grayLight(style='margin:0px 30px 0px 30px;')
+          form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/usuarios/login", method="post")
+            //usuario
+            .input-control.modern.text.iconic.full-size.required(data-role='input')
+              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='usuario',name='usuario')
+              span.input-state-error.mif-warning
+              span.input-state-success.mif-checkmark    
+              span.label Nombre de Usuario
+              span.informer Ingrese Nombre de Usuario
+              span.placeholder Usuario
+              span.icon.mif-user
+              button.button.helper-button.clear
+                span.mif-cross
+
+            //pass
+            |<br/>
+            .input-control.modern.text.iconic.required.full-size(data-role='input')
+              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', id='password',name='password')
+              span.input-state-error.mif-warning
+              span.input-state-success.mif-checkmark    
+              span.label Contraseña
+              span.informer Ingrese una Contraseña
+              span.placeholder Contraseña
+              span.icon.mif-key
+              button.button.helper-button.clear
+                span.mif-cross
+            |<br/> <br/>
+            .align-center
+              button.button.info.block-shadow-info.text-shadow Ingresar                     
+      script.
+        function no_submit(){
+          return false;
+        }
+        function notifyOnErrorInput(input){
+          var message = input.data('validateHint');
+          $.Notify({
+            caption: 'Error',
+            content: message,
+            type: 'alert'
+          });
+        }
