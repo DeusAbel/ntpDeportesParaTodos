@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var tusuarios = mongoose.model('Usuario');
 
+if (process.env.NODE_ENV ==='production'){
+  apiOptions.server = "https://ntpdeporteparatodos.herokuapp.com"
+}
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
