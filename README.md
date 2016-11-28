@@ -1,7 +1,7 @@
 Bienvenido a ntpDeportesParaTodos!
 ==============================
 
-**NtpDeportesParaTodos** es un proyecto dedicado a la atención especial al area de deportes y <i class="icon-location">**eventos**</i> deportivos utilizando las tecnologías de informacion como <i class="icon-cog">**herramienta**</i> principal para resolver las necesidades tecnicas del servicio. 
+**NtpDeportesParaTodos** es un proyecto dedicado a la atención especial al area de deportes y <i class="icon-location">**eventos**</i> deportivos utilizando las tecnologías de información como <i class="icon-cog">**herramienta**</i> principal para resolver las necesidades técnica del servicio. 
 
 
 ----------
