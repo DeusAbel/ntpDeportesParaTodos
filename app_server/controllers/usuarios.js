@@ -14,7 +14,7 @@ var sendJSONresponse = function(res, status, content) {
 };
 
 
-var RegistrarUsuario = function (req, res, callback) {  
+var registrarUsuario = function (req, res, callback) {  
   var requestOptions, path;  
   path = "/api/usuarios";  
   postdata = {
@@ -47,6 +47,71 @@ var RegistrarUsuario = function (req, res, callback) {
 };
 
 
+var modificarUsuario = function (req, res, callback) {  
+  var requestOptions, path;  
+  path = "/api/usuarios/"+req.params.usuario_id;  
+  postdata = {
+    usuario_id: req.params.usuario_id,
+    nombre:     req.body.nombre,        
+    password:   req.body.password,
+    sexo:       req.body.sexo
+  };
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "put",
+    json : postdata
+  };
+  //console.log("cuerpo a insertar" + req.body.nombre + req.body.correo);
+  request(
+    requestOptions,
+    function(err, response, body) {
+      var data = body;
+      console.log(response.statusCode);
+      if (response.statusCode === 201 || response.statusCode ===200){               
+        //respuesta positiva
+        callback(req, res, data);
+        //res.redirect('http://google.com');
+      } else {
+        //respuesta negativa
+        res.redirect('http://yahoo.com');
+      }
+    }
+  );
+};
+
+
+
+var eliminarUsuario = function (req, res, callback) {  
+  var requestOptions, path;  
+  path = "/api/usuarios/"+req.params.usuario_id;  
+  postdata = {
+    usuario_id: req.params.usuario_id,
+  };
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "delete",
+    json : postdata
+  };
+  //console.log("cuerpo a insertar" + req.body.nombre + req.body.correo);
+  request(
+    requestOptions,
+    function(err, response, body) {
+      var data = body;
+      console.log(response.statusCode);
+      if (response.statusCode === 201 || response.statusCode ===200){               
+        //respuesta positiva
+        callback(req, res, data);
+        //res.redirect('http://google.com');
+      } else {
+        //respuesta negativa
+        res.redirect('http://yahoo.com');
+      }
+    }
+  );
+};
+
+
+
 var leerUsuario = function (req, res, callback) {  
   var requestOptions, path;  
   path = "/api/usuarios/"+req.params.usuario_id;  
@@ -71,32 +136,43 @@ var leerUsuario = function (req, res, callback) {
         //res.redirect('http://google.com');
       } else {
         //respuesta negativa
-        res.redirect('http://yahoo.com');
+        callback(req, res, data);
       }
     }
   );
 };
 
 
-
-
-
 module.exports.registrar = function(req, res) {
-    console.log('AQUIIIIIII EN REGIISSSTRO');
-    var usuario= req.body.correo;
-    console.log(usuario);
-    console.log('parametros3: ' + req.body.correo);
-    RegistrarUsuario(req, res, function(req, res, responseData) {
-      res.redirect('http://yahoo.com');
+        
+    registrarUsuario(req, res, function(req, res, responseData) {
+      //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
+      sendJSONresponse(res, 201, responseData); 
   });
 };
 
 module.exports.leer = function(req, res) {         
-    console.log("toy aqui: ");   
+       
     leerUsuario(req, res, function(req, res, responseData) {
-      console.log(responseData);      
+            
       //responseData contiene la informacion de retorno del api
       //sendJSONresponse es solo para mostrar como ha regresado
+      sendJSONresponse(res, 201, responseData); 
+  });
+};
+
+module.exports.modificar = function(req, res) {
+        
+    modificarUsuario(req, res, function(req, res, responseData) {
+      //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
+      sendJSONresponse(res, 201, responseData); 
+  });
+};
+
+module.exports.eliminar = function(req, res) {
+    console.log('AQUIIIIIII EN REGIISSSTRO');    
+    registrarUsuario(req, res, function(req, res, responseData) {
+      //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
       sendJSONresponse(res, 201, responseData); 
   });
 };
