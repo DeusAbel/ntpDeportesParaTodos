@@ -1,7 +1,7 @@
 Bienvenido a ntpDeportesParaTodos!
 ==============================
 
-**NtpDeportesParaTodos** es un proyecto dedicado a la atencion especial al área de deportes y <i class="icon-location">**eventos**</i>  deportivos utilizando las  tecnologías  de  informacion  como  <i class="icon-cog">**herramienta**</i>  principal  para  resolver  las  necesidades tecnicas del servicio. 
+**NtpDeportesParaTodos** es un proyecto dedicado a la atencion especial al area de deportes y <i class="icon-location">**eventos**</i> deportivos utilizando las tecnologías de informacion como <i class="icon-cog">**herramienta**</i> principal para resolver las necesidades tecnicas del servicio. 
 
 
 ----------
@@ -14,9 +14,9 @@ ntpDeportesParaTodos **necesita conexión a internet**, por ninguna razón puede
 
 > **Nota:**
 
-> - ntpDeportesParaTodos cuneta con una API de Servicios REST, puede consumirse desde cualquier otra plataforma complatible con servicios REST.
+> - ntpDeportesParaTodos cuenta con una API de Servicios REST, puede consumirse desde cualquier otra plataforma complatible con servicios REST.
 > - El formato de intercambio de información mediante los servicios REST es JSON.
-> - Para el servicio de evetos  **es necesario tener una fuente de geolocalización!**, tales como **historial de ubicaciones de su navegador web** o **servicio GPS** (Para actualización de posicion en movimiento, revisar la sección de [<i class="icon-refresh"></i> Sincronización](#Sincronización)).
+> - Para el servicio de evetos **es necesario tener una fuente de geolocalización!**, tales como **historial de ubicaciones de su navegador web** o **servicio GPS** (Para actualización de posicion en movimiento, revisar la sección de [<i class="icon-refresh"></i> Sincronización](#Sincronización)).
 
 #### <i class="icon-user"></i> Creando una cuenta
 
