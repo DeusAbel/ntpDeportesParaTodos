@@ -1,11 +1,10 @@
 {
   "name": "ntpDeportesParaTodos",
   "version": "1.0.0",
-  "description": "Bienvenido a ntpDeportesParaTodos! ==============================",
+  "private": true,
   "scripts": {
     "start": "node ./bin/www"
-  },
-  "main": "app.js",
+  },  
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
