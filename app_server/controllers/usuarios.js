@@ -142,6 +142,36 @@ var leerUsuario = function (req, res, callback) {
   );
 };
 
+var listarUsuarios = function (req, res, callback) {  
+  var requestOptions, path;  
+  path = "/api/usuarios";  
+  postdata = {
+    usuario_id: req.params.usuario_id    
+  };
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "get",
+    json : postdata
+  };
+  console.log("ruta: " + path);
+  request(
+    requestOptions,
+    function(err, response, body) {
+      var data = body;
+      console.log("codigo de retorno: " + response.statusCode);
+      if (response.statusCode === 201 || response.statusCode ===200){               
+        //respuesta positiva
+        console.log("corecto");
+        callback(req, res, data);
+        //res.redirect('http://google.com');
+      } else {
+        //respuesta negativa
+        callback(req, res, data);
+      }
+    }
+  );
+};
+
 
 module.exports.registrar = function(req, res) {
         
@@ -172,6 +202,14 @@ module.exports.modificar = function(req, res) {
 module.exports.eliminar = function(req, res) {
     console.log('AQUIIIIIII EN REGIISSSTRO');    
     registrarUsuario(req, res, function(req, res, responseData) {
+      //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
+      sendJSONresponse(res, 201, responseData); 
+  });
+};
+
+module.exports.listar = function(req, res) {
+    console.log('AQUIIIIIII EN REGIISSSTRO');    
+    listarUsuarios(req, res, function(req, res, responseData) {
       //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
       sendJSONresponse(res, 201, responseData); 
   });
