@@ -201,7 +201,7 @@ module.exports.modificar = function(req, res) {
 
 module.exports.eliminar = function(req, res) {
     console.log('AQUIIIIIII EN REGIISSSTRO');    
-    registrarUsuario(req, res, function(req, res, responseData) {
+    eliminarUsuario(req, res, function(req, res, responseData) {
       //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
       sendJSONresponse(res, 201, responseData); 
   });
