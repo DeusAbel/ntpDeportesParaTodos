@@ -30,7 +30,7 @@ html
                                 tr
                                     th(style='text-align:center;')
                                         img(src='../images/go.png', style='display: inline-block; margin:0px; padding:15px')
-                            tbody(style='height:70%;')
+                            tbody.bg-lightRed(style='height:70%;')
                                 tr
                                     td(style='width:100%; text-align:center;')
                                         h6
@@ -49,7 +49,7 @@ html
                                                         span.informer.fg-white Ingrese Nombre de Usuario
                                                         span.placeholder.fg-white Usuario
                                                         span.icon.mif-user.fg-white
-                                                        button.button.helper-button.clear
+                                                        button.button.helper-button.clear.bg-lightRed
                                                             span.mif-cross
                                                     //pass
 
@@ -61,7 +61,7 @@ html
                                                         span.informer Ingrese una Contraseña
                                                         span.placeholder Contraseña
                                                         span.icon.mif-key.fg-white
-                                                        button.button.helper-button.clear
+                                                        button.button.helper-button.clear.bg-lightRed
                                                             span.mif-cross
                                                     |<br/> <br/>
                                                     .align-center
@@ -70,8 +70,8 @@ html
                                                         h6
                                                             small.fg-white(style='display: inline-block;')  ¿Haz olvidado la contraseña?   
                                                         |<br/> <br/> <br/> <br/>
-                                        .align-center.fixed-bottom                                    
-                                            a.button.small-button.fg-lightGray(href='/registro',style='opacity:0.7; width:95% ;margin-left:auto;margin-right:auto; ' ) CREAR CUENTA NUEVA DE XEVENTGO
+                                        .align-center                                 
+                                            a.button.small-button.fg-lightGray(href='/registro',style='opacity:0.7; width:95% ;margin-left:auto;margin-right:auto; ' ) CREAR CUENTA NUEVA DE NTP
                                             |<br/><br/>   
                                         script.
                                             function no_submit(){
