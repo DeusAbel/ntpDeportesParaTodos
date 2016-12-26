@@ -51,7 +51,7 @@ module.exports.usuariosRead = function(req, res){
   if (req.params && req.params.usuario_id){
     console.log("codigo de usuario: " + req.params.usuario_id);
     tusuarios
-      .findById(req.params.usuario_id)
+      .findOne({nombre:req.params.usuario_id})
       .exec(function(err, usuario){
         if(!usuario || usuario.flag == "E"){
           sendJSONresponse(res, 404, {

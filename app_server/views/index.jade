@@ -38,11 +38,11 @@ html
                                         |<br/>
                                         .panel.bg-lightRed
                                             .content.bg-lightRed
-                                                form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/usuarios/login", method="post")
+                                                form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/login", method="post")
                                                     //usuario
                                                     
                                                     .input-control.modern.text.iconic.full-size.required(data-role='input')
-                                                        input.fg-white(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='usuario',name='usuario', style='width:95%')
+                                                        input.fg-white(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='usuario_id',name='usuario_id', style='width:95%')
                                                         span.input-state-error.mif-warning
                                                         span.input-state-success.mif-checkmark    
                                                         span.label.fg-white Nombre de Usuario

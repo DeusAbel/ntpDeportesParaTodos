@@ -18,9 +18,9 @@ router.get('/registro', function (req, res, next) {
 
 router.post('/usuarios', ctrlUsuarios.registrar);
 router.get('/usuarios', ctrlUsuarios.listar);
-router.get('/usuarios/:usuario_id', ctrlUsuarios.leer);
-//router.put('/usuarios/:usuario_id', ctrlUsuarios.modificar);
-//router.delete('/usuarios/:usuario_id', ctrlUsuarios.eliminar);
+router.post('/login', ctrlUsuarios.leer);
+router.put('/usuarios/:usuario_id', ctrlUsuarios.modificar);
+router.delete('/usuarios/:usuario_id', ctrlUsuarios.eliminar);
 
 
 /* Other pages */

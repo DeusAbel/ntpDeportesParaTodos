@@ -114,9 +114,10 @@ var eliminarUsuario = function (req, res, callback) {
 
 var leerUsuario = function (req, res, callback) {  
   var requestOptions, path;  
-  path = "/api/usuarios/"+req.params.usuario_id;  
+  console.log("id d usuario: " + req.body.usuario_id);
+  path = "/api/usuarios/"+req.body.usuario_id;  
   postdata = {
-    usuario_id: req.params.usuario_id    
+    usuario_id: req.body.usuario_id    
   };
   requestOptions = {
     url : apiOptions.server + path,
@@ -176,6 +177,7 @@ var listarUsuarios = function (req, res, callback) {
 module.exports.registrar = function(req, res) {
         
     registrarUsuario(req, res, function(req, res, responseData) {
+      console.log("registrar");
       //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
       sendJSONresponse(res, 201, responseData); 
   });
@@ -184,7 +186,7 @@ module.exports.registrar = function(req, res) {
 module.exports.leer = function(req, res) {         
        
     leerUsuario(req, res, function(req, res, responseData) {
-            
+      console.log("leer");
       //responseData contiene la informacion de retorno del api
       //sendJSONresponse es solo para mostrar como ha regresado
       sendJSONresponse(res, 201, responseData); 
@@ -194,13 +196,14 @@ module.exports.leer = function(req, res) {
 module.exports.modificar = function(req, res) {
         
     modificarUsuario(req, res, function(req, res, responseData) {
+      console.log("modificar");
       //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
       sendJSONresponse(res, 201, responseData); 
   });
 };
 
 module.exports.eliminar = function(req, res) {
-    console.log('AQUIIIIIII EN REGIISSSTRO');    
+    console.log('AQUIIIIIII EN eliminar');    
     eliminarUsuario(req, res, function(req, res, responseData) {
       //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
       sendJSONresponse(res, 201, responseData); 
