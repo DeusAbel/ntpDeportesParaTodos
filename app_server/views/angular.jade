@@ -1,0 +1,9 @@
+html(ng-app = "ntpdeporteparatodosApp")
+    head
+        script(src='/angular/angular.min.js')
+        script(src='/app.js')
+        script(src='/views/homeviewController.js')
+    body(ng view ng-controller='homeCtrl as vm')
+        input(ng-model='myInput')
+        h1 Hola {{myInput}}
+        h1 {{vm.pageHeader.title}}</html> 

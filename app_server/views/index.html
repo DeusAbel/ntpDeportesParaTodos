@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="ntpdeporteparatodosApp">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/metro.css">
+    <link rel="stylesheet" href="/stylesheets/metro-responsive.css">
+    <link rel="stylesheet" href="/stylesheets/metro-schemes.css">
+    <link rel="stylesheet" href="/stylesheets/metro-schemes-min.css">
+    <link rel="stylesheet" href="/stylesheets/metro-icons.css">
+    <link rel="stylesheet" href="/stylesheets/metro-colors.css">
+    <link rel="stylesheet" href="/stylesheets/docs.css">
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/metro.js"></script>
+    </script>
+<script src="/angular/angular.min.js"></script>
+<script src="/lib/angular-route.min.js"></script>
+</script>
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1D1D1D">
+<meta charset="utf-8">
+<style>
+      html, body, {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      } 
+    </style>
+</head>
+
+<body ng-controller="homeCtrl" class="bg-red">
+    <div class="fixed-top">
+        <header date-role="appbar" style="box-shadow: 0px 4px 5px #555; " class="app-bar navy bg-dark">
+<div id="menu" style="z-index:-1;" class="container main-menu-wrapper">
+<ul style="margin-left:5%; margin-right:0%; box-shadow:0 0 0; margin:0; " class="m-menu compact bg-dark">
+<li class="bg-dark fg-lightRed">
+    <img src="../images/logo.png" style="height: 45px; padding-top:0.5rem"></li>
+<li class="bg-dark fg-lightRed">
+    <a onclick="toggleMetroCharm('#left-charm')" class="darkRed">MENU </a>
+</li>
+<!--li.bg-dark.fg-white
+            a.dropdown-toggle(href='#') Categorías
+            ul.d-menu(data-role='dropdown', style='display: none;')
+              li.bg-dark
+                a(href='#') Sociales
+              li.bg-dark
+                a(href='#') Culturales
+              li.bg-dark
+                a.dropdown-toggle(href='#') Deportivos...
+                ul.d-menu(data-role='dropdown')
+                  li.bg-dark
+                    a(href='#') Futball Soccer
+                  li.bg-dark
+                    a(href='#') VoleyBall
+            -->
+<!--li.bg-dark.fg-white-->
+<!--  a(href='#') Ranking-->
+<!--li.bg-dark.fg-whitea(href='#') Sobre Nosotros
+            -->
+<li class="bg-dark fg-white place-right"> <a href="#" class="dropdown-toggle"><img src="../images/usuario.png" style="height: 20px; display: inline-block; margin-right: 10px;">Usuario</a>
+<ul data-role="dropdown" class="d-menu">
+    <li class="bg-dark"><a href="/usuarios/login">Login</a></li>
+    <li class="bg-dark"><a href="/usuarios/registro">Registro</a></li>
+    <li class="bg-dark"><a href="#">Amigos</a></li>
+    <li class="bg-dark"><a href="#">Salir</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+</div>
+<div style="height:100%; width:100%; padding-top:0px !important; display:block;" class="container page-content bg-grayLight">
+<div id="ContenedorTotal" style="height:100%; width:100%; margin:0px; padding:0px;" class="flex-grid">
+<!--contenido-->
+<div id="Container6" style="width:100% ; height:5%; max-height:60px; min-height:60px; padding:0px; " class="row">
+<div style="margin-top:0px;" class="cell size12">
+<div data-role="charm" data-position="left" id="left-charm" style="opacity:0.9!important; display:inline-block;" class="charm left-side bg-darkRed"><br/><br/><br/>
+<ul class="sidebar bg-darkRed">
+    <li>
+        <a href="/index" onclick="window.location.href='/index2';"><span class="mif-vpn-publ icon"></span><span class="title">INICIO</span></a>
+</li>
+<li><a href="#"><span class="mif-drive-eta icon"></span><span class="title">DEPORTES</span></a></li>
+<li><a href="#"><span class="mif-cloud icon"></span><span class="title">NOTICIAS                         </span></a></li>
+<li><a href="#"><span class="mif-database icon"></span><span class="title">EVENTOS</span></a></li>
+<li><a href="#"><span class="mif-cogs icon"></span><span class="title">CUENTA                               </span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div ng-view>
+    </><a href="#home">Inicio</a>
+    <p>{{pageHeader.title}}</p>
+    <a href="#home2">home</a>
+    <div id="Container8" style="width:100% ; padding:0px; height:5%; min-height:45px; max-height:45px" class="row flex-just-center cell-auto-size"></div>
+</div>
+</div>
+<!--script(src='/angular/angular.min.js')-->
+<!--script(src='/lib/angular-route.min.js')-->
+<!--script(src='/app.js')  -->
+<!--script(src='/views/homeviewController.js') //footer   
+    -->
+<div>
+    <footer style="box-shadow: 0px 4px 5px #AAA;" class="fixed-bottom bg-dark">
+<ul style="margin-left:5%; margin-right:5%;" class="f-menu bg-dark">
+<!--li.bg-dark.fg-lightRed(style='margin-left:5%; margin-right:5%')-->
+<h4 style="margin-right:auto; margin-left:auto" class="fg-lightRed"><img src="../images/logo.png" style="height: 30px; display: inline-block; margin-right: 10px;">ntpDeportes </h4>
+</ul>
+</footer>
+</div>
+</body>
+
+</html>
