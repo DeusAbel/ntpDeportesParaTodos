@@ -9,7 +9,7 @@
   ntpDeporteApp.config(function($routeProvider) {    
     console.log("estuve aqui en router22");
     $routeProvider
-      .when('/home', {
+      .when('/', {
         templateUrl: 'views/home.html',
         controller: 'homeCtrl', 
         controllerAs: 'h1'
@@ -21,41 +21,18 @@
         controllerAs: 'h2'
       })
 
+      .when('/noticia', {
+        templateUrl:'views/noticia.html',
+        controller: 'noticiaCtrl',        
+        controllerAs: 'n1'       
+      })
+      
+
       .otherwise({
         redirectTo: '/'
       });
   });
 
 
-//home
-
-/*  ntpDeporteApp.controller('homeCtrl2', function(){
-    alert("holass222");
-    console.log("homectrl2");
-
-    var h1 = this;
-    h1.pageHeader = {
-      title: 'Hola Angularoso222'      
-    };
-    h1.message = "Efectivo Angu2222";
-
-  });
-
-
-  ntpDeporteApp.controller('homeCtrl', function(){
-    alert("holass");
-    console.log("homectrl");
-
-    var h2 = this;
-    h2.pageHeader = {
-      title: 'Hola Angularoso'      
-    };
-    h2.message = "Efectivo Angu";
-
-  });*/
-
-
 
 })();
-
-  

@@ -14,6 +14,7 @@ router.put('/usuarios/:usuario_id',     ctrlUsuarios.usuariosUpdate);
 router.delete('/usuarios/:usuario_id',  ctrlUsuarios.usuariosDelete);
 
 //Deportes
+//router.get('/deportes/last',            ctrlDeportes.deportesLastList);
 router.get('/deportes',                 ctrlDeportes.deportesList);
 router.post('/deportes',                ctrlDeportes.deportesCreate);
 router.get('/deportes/:deporte_id',     ctrlDeportes.deportesRead);
@@ -33,6 +34,8 @@ router.post('/noticias',                  ctrlNoticias.noticiasCreate);
 router.get('/noticias/:noticia_id',       ctrlNoticias.noticiasRead);
 router.put('/noticias/:noticia_id',       ctrlNoticias.noticiasUpdate);
 router.delete('/noticias/:noticia_id',    ctrlNoticias.noticiasDelete);
+
+router.get('/lastnoticias/',              ctrlNoticias.noticiasLastList);
 
 //Eventos
 router.get('/eventos',                  ctrlEventos.eventosList);

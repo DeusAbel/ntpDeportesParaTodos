@@ -1,5 +1,42 @@
-<div class="Container7 row" style='height:83%; width:100% ;min-height:255px; '>      
-  <div class="cell1 cell colspan12">
-    <h1> {{h1.pageHeader.title}}</h1>
+<div class="cell1 cell colspan8" style="margin-bottom: 100px; padding-bottom:100px">
+  <h3 class="fg-lightOrange text-light margin5">
+    Noticias
+    <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span>
+  </h3>
+  <div class="tile-group no-margin no-padding" style="width: 100%;">
+    <div class="tile-large bg-lightRed ol-lighterBlue" data-role="tile" ng-click="h1.SelectNoticia(0)" onclick="location.href='#noticia';">
+      <span class="tile-label">{{h1.noticias[0].titulo}}</span>
+      <span class="tile-badge">{{h1.noticias[0].ranking}}</span>
+    </div>
+    <div class="tile-wide bg-lightRed ol-lighterBlue" data-role="tile" ng-click="h1.SelectNoticia(1)" onclick="location.href='#noticia';">
+      <span class="tile-label">{{h1.noticias[1].titulo}}</span>
+      <span class="tile-badge">{{h1.noticias[1].ranking}}</span>
+    </div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile">
+      
+    </div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile-wide bg-lightRed ol-lighterBlue" data-role="tile"></div>
+  </div>
+
+  <h3 class="fg-lighterBlue text-light margin5">
+    Deportes
+    <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span>
+  </h3>
+  <div class="tile-group no-margin no-padding" style="width: 100%;">
+    <div class="tile-large bg-lightRed ol-lighterBlue" data-role="tile">
+        <span class="tile-label">Label</span>
+        <span class="tile-badge">5</span>
+    </div>
+    <div class="tile-wide bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile bg-lightRed ol-lighterBlue" data-role="tile"></div>
+    <div class="tile-wide bg-lightRed ol-lighterBlue" data-role="tile"></div>
   </div>
 </div>
+
+
