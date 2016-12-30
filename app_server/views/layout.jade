@@ -57,18 +57,19 @@ html(ng-app="ntpdeporteparatodosApp" style='height:600px; margin: 0px; padding:0
                 
                 
               ul.d-menu(data-role='dropdown')
-                if (typeof(usuario) == 'undefined')
+                if (usuarioNombre === 'Usuario')
                   li.bg-dark
                     a(href='/logear') Login
                 else
                   li.bg-dark
                     a(href='/') Cerrar Sesión
-                li.bg-dark
-                  a(href='/usuarios/registro') Registro
-                li.bg-dark
-                  a(href='#') Amigos
-                li.bg-dark
-                  a(href='#') Salir
+                if (usuarioNombre !== 'Usuario')                                 
+                  li.bg-dark
+                    a(href='#') Mis Noticias
+                  li.bg-dark
+                    a(href='#') Mis Deportes
+                  li.bg-dark
+                    a(href='#') Mis Eventos
     div.container.page-content.flex-content-center.bg-grayLight(style='height:100%; width:100%; padding-top:0px !important; display:block;')        
       #ContenedorTotal.flex-grid.flex-just-center(style='height:100%; width:100%; margin:0px; padding:0px;')
         //contenido
