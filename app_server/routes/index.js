@@ -5,16 +5,15 @@ var ctrlUsuarios = require('../controllers/usuarios');
 
 /* Locations pages */
 /*router.get('/', ctrlLocations.homelist);*/
-/*router.get('/', function (req, res, next) {
+router.get('/logear', function (req, res, next) {
     res.render('index', { title: 'xEventGO' });
-});*/
+});
 /*router.get('/index2', function (req, res, next) {
     res.render('index2', { title: 'xEventGO' });
-});
+});*/
 router.get('/registro', function (req, res, next) {
     res.render('registro', { title: 'xEventGO' });
 });
-*/
 
 router.get('/', function (req, res, next) {
     res.render('layout', { title: 'ntpDeporte' });
