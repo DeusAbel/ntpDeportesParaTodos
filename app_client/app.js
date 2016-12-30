@@ -27,6 +27,11 @@
         controllerAs: 'n1'       
       })
       
+      .when('/noticias', {
+        templateUrl:'views/noticias.html',
+        controller: 'noticiasCtrl',        
+        controllerAs: 'ns'       
+      })
 
       .otherwise({
         redirectTo: '/'
