@@ -25,7 +25,7 @@ var comentarioSchema = new Schema({
   usuario:      {type: Schema.ObjectId, ref: 'usuario'},
   noticia:      {type: Schema.ObjectId, ref: 'noticia'}, 
   descripcion:  {type: String,  required: true},  
-  fecha:        {type: Date,    required: true},  
+  fecha:        {type: Date,    required: true, default: Date.now},  
   ranking:      {type: Number,  required: true},
   flag:         {type: String,  required: true}  
 });

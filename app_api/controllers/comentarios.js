@@ -19,7 +19,7 @@ module.exports.comentariosCreate = function(req, res){
       usuario:      req.body.usuario_id,
       noticia:      req.body.noticia_id,        
       descripcion:  req.body.descripcion,      
-      fecha:        req.body.fecha,      
+      //fecha:        req.body.fecha,      
       ranking:      req.body.ranking,
       flag:     'A'
     }, function(err, comentario){

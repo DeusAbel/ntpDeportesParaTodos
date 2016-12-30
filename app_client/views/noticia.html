@@ -1,4 +1,4 @@
-<div class="cell1 cell colspan6" style="margin-bottom: 100px; padding-bottom:100px; margin-top:50px">  
+<div class="cell1 cell colspan6" style="margin-bottom: 100px; padding-bottom:100px; margin-top:50px; margin-bottom: 50px">  
     <div class="panel">
         <div class="heading" style="height: auto">
             <span class="icon mif-home"></span>
@@ -29,9 +29,29 @@
                 </div>
             </div>
         </div>
+        </br></br>        
         <div ng-show="c1.usuario_id!=0">
-            <a href="#">Comentar {{usuario_id}}</a>
-            <h1>de</h1>
+            <form>
+                <h3>
+                    Comentar
+                </h3>
+
+                <div class="listview-outlook ribbed-lighterBlue" data-role="listview"  >
+                    <div class="list marked" >
+                        <div class="list-content">
+                            <span class="list-title">{{c1.comentarioNuevo.nombre}}</span>
+                            <span class="list-subtitle">{{c1.comentarioNuevo.descripcion}}</span>                
+                            <div class="rating" data-role="rating" data-value="{{item.ranking}}"/>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="input-control textarea" style="width:80%">                     
+                    <textarea style="width:100%" ng-model="c1.comentarioNuevo.descripcion" placeholder="Escriba su comentario aquí..."></textarea>
+                </div>
+                <input ng-click="c1.comentarioInsert()" class="button success" type="button" value="Comentar" />
+            </form>
         </div>
     </div>
         
