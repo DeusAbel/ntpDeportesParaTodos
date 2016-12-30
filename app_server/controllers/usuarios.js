@@ -37,7 +37,7 @@ var registrarUsuario = function (req, res, callback) {
       if (response.statusCode === 201 || response.statusCode ===200){               
         //respuesta positiva
         callback(req, res, data);
-        //res.redirect('http://google.com');
+        //res.redirect('/');
       } else {
         //respuesta negativa
         res.redirect('http://yahoo.com');
@@ -132,12 +132,15 @@ var leerUsuario = function (req, res, callback) {
       console.log("codigo de retorno: " + response.statusCode);
       if (response.statusCode === 201 || response.statusCode ===200){               
         //respuesta positiva
-        console.log("corecto");
+        console.log("correcto");
+        
+        res.render('layout',{identificador : data._id,usuario:{nombre: data.nombre}});////////
+        console.log("este es le id del usuario: "+data._id);
         callback(req, res, data);
-        //res.redirect('http://google.com');
       } else {
         //respuesta negativa
         callback(req, res, data);
+        //res.redirect('/loguear');        
       }
     }
   );
@@ -178,8 +181,8 @@ module.exports.registrar = function(req, res) {
         
     registrarUsuario(req, res, function(req, res, responseData) {
       console.log("registrar");
-      //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
-      sendJSONresponse(res, 201, responseData); 
+      res.redirect('/logear');// este metodo redirecciona a otra web
+      //sendJSONresponse(res, 201, responseData); 
   });
 };
 
@@ -189,8 +192,9 @@ module.exports.leer = function(req, res) {
       console.log("leer");
       //responseData contiene la informacion de retorno del api
       //sendJSONresponse es solo para mostrar como ha regresado
-      sendJSONresponse(res, 201, responseData); 
-  });
+      //sendJSONresponse(res, 201, responseData); 
+      
+    });
 };
 
 module.exports.modificar = function(req, res) {
@@ -210,6 +214,13 @@ module.exports.eliminar = function(req, res) {
   });
 };
 
+module.exports.listar = function(req, res) {
+    console.log('AQUIIIIIII EN REGIISSSTRO');    
+    listarUsuarios(req, res, function(req, res, responseData) {
+      //res.redirect('http://yahoo.com'); este metodo redirecciona a otra web
+      sendJSONresponse(res, 201, responseData); 
+  });
+};
 module.exports.listar = function(req, res) {
     console.log('AQUIIIIIII EN REGIISSSTRO');    
     listarUsuarios(req, res, function(req, res, responseData) {

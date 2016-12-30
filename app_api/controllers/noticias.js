@@ -21,7 +21,7 @@ module.exports.noticiasCreate = function(req, res){
       descripcion:  req.body.descripcion,
       fecha_hora:   req.body.fecha_hora,
       ranking:      req.body.ranking,
-      flag:     'A'
+      flag:         'A'
     }, function(err, noticia){
       if (err){
         sendJSONresponse(res, 400, err);
@@ -47,6 +47,7 @@ module.exports.noticiasList = function(req, res){
       });
   }  
 };
+
 
 //Leer Noticia
 module.exports.noticiasRead = function(req, res){
@@ -148,4 +149,22 @@ module.exports.noticiasDelete = function(req, res){
         });
       }
     );
-};  
+}; 
+
+//Listar ultimas noticias
+module.exports.noticiasLastList = function(req, res){
+  console.log("Listando ultimos");
+  if(req.params){
+    tnoticias
+      .find({flag:"A"}).sort('-fecha_hora').limit(2)
+      .exec(
+        function(err, noticias){
+          var noticiaMap = {};
+          noticias.forEach(function(noticia){
+            noticiaMap[noticia._id] = noticia;
+            console.log("Noticia ultimassssssssss");
+          });        
+          sendJSONresponse(res, 201, noticias);      
+        });
+  }  
+};
