@@ -1,0 +1,30 @@
+<div class="cell1 cell colspan6 " style="margin-bottom: 100px; padding-bottom:100px; margin-top:50px">  
+    <!--<div class="panel" style="margin-top: 30px" ng-repeat="noticia in ns.datos">
+        <div class="heading" style="height: auto">
+            <span class="icon mif-home"></span>
+            
+            <span class="title" >{{noticia.fecha_hora}}</span>
+            <h1 style="padding-left: 20px">{{noticia.titulo}}</h1>
+        </div>
+        <div class="content padding10">
+            {{noticia.descripcion}}
+        </div>
+        <div class="rating" data-role="rating" data-value="{{n1.datos.ranking}}">
+        </div>
+    </div>-->
+    <h1 class="fg-lightOrange text-light margin5">
+        Noticias
+        <span class="mif-chevron-right mif-3x" style="vertical-align: top !important;"></span>
+    </h1>
+    <div class="listview-outlook ribbed-lighterBlue" data-role="listview" style="margin-left: 20px" >
+        <div class="list marked"  ng-repeat="item in ns.datos" ng-click="ns.SelectNoticia($index)" >
+            <div class="list-content">
+                <span class="list-title">{{item.titulo}}</span>
+                <span class="list-subtitle">{{item.fecha_hora}}</span>                
+                <div class="rating" data-role="rating" data-value="{{item.ranking}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
