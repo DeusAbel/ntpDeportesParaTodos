@@ -134,7 +134,7 @@ var leerUsuario = function (req, res, callback) {
         //respuesta positiva
         console.log("correcto");
         
-        res.render('layout',{identificador : data._id,usuario:{nombre: data.nombre}});////////
+        res.render('layout',{identificador : data._id, usuarioNombre: data.nombre});////////
         console.log("este es le id del usuario: "+data._id);
         callback(req, res, data);
       } else {

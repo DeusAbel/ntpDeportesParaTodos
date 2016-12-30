@@ -13,7 +13,7 @@
     });
 
 
-    app.controller('homeCtrl', ['$http','noticia','noticias', function($http, noticia, noticias){
+    app.controller('homeCtrl', ['$http','noticia','noticias','usuario', function($http, noticia, noticias, usuario){
       var h1 = this;
       h1.pageHeader = {
         title: 'Hola Angularoso'      
@@ -32,6 +32,7 @@
       });           
       
       h1.SelectNoticia = function(id){
+        noticia.id = h1.noticias[id]._id
         noticia.titulo = h1.noticias[id].titulo;
         noticia.descripcion = h1.noticias[id].descripcion;
         noticia.ranking = h1.noticias[id].ranking*5/10;
@@ -40,6 +41,10 @@
         //console.log("constante "+noticia.titulo);                  
       };
                   
+      h1.usuario_id = angular.element('#id_user');
+      
+      usuario.usuario_id=h1.usuario_id[0].value;
+      console.log("holitas: "+usuario.usuario_id);
 
     }]);
 
@@ -55,7 +60,7 @@
       ns.datos = noticias.listaNoticias;
       ns.SelectNoticia = function(id){
         
-        console.log('id: ' + id);
+        console.log('id: ' + id);        
         noticia.titulo = ns.datos[id].titulo;
         noticia.descripcion = ns.datos[id].descripcion;
         noticia.ranking = ns.datos[id].ranking*5/10;
@@ -65,8 +70,36 @@
 
     }]);
 
+    app.controller('comentNoticiasCtrl', ['$http','noticia','usuario', function($http, noticia,usuario){
+      var c1 = this;
+      
+      c1.usuario_id=usuario.usuario_id;
+
+      c1.comentarios=[];
+
+      $http.get('/api/comentariosN/'+noticia.id)
+        .then(function (data) {
+            c1.comentarios = data.data;          
+            console.log(data.data)
+            //console.log("comentarios del user: "+c1.comentarios[0].usuario.nombre);                  
+        }, function(data) {          
+            console.log("error: " + data);
+      });           
+      
+      
+        //console.log("resultado: " + c1.usuario[0].nombre);
+        //return c1.usuario[0].nombre;
+      
+      
+    
+    }]);
+                  
+
+
+
 
     app.value('noticia',{
+        id: 0,
         titulo : 'nada',
         descripcion : 'nada',
         ranking : 0,
@@ -77,7 +110,9 @@
         listaNoticias : []
     });
 
-
+    app.value('usuario',{
+        usuario_id : 0
+    });
 
 
 })();

@@ -27,6 +27,7 @@ router.post('/comentarios',                     ctrlComentarios.comentariosCreat
 router.get('/comentarios/:comentario_id',       ctrlComentarios.comentariosRead);
 router.put('/comentarios/:comentario_id',       ctrlComentarios.comentariosUpdate);
 router.delete('/comentarios/:comentario_id',    ctrlComentarios.comentariosDelete);
+router.get('/comentariosN/:noticia_id',          ctrlComentarios.comentariosNoticia);
 
 //Noticias
 router.get('/noticias',                   ctrlNoticias.noticiasList);

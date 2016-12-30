@@ -50,8 +50,10 @@ module.exports.usuariosList = function(req, res){
 module.exports.usuariosRead = function(req, res){
   if (req.params && req.params.usuario_id){
     console.log("codigo de usuario: " + req.params.usuario_id);
-    tusuarios
-      .findOne({nombre:req.params.usuario_id})
+    var ObjectId = require('mongoose').Types.ObjectId;
+    var objId = new ObjectId( (req.params.usuario_id.length < 12) ? "123456789012" : req.params.usuario_id );
+    tusuarios    
+    .findOne({$or:[{_id:objId},{nombre:req.params.usuario_id}]})
       .exec(function(err, usuario){
         if(!usuario || usuario.flag == "E"){
           sendJSONresponse(res, 404, {

@@ -13,4 +13,28 @@
 
         </div>
     </div>
+    </br></br>
+    <h3 class="fg-lightOrange text-light margin5">
+        Comentarios
+        <span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span>
+    </h3>
+    </br>
+    <div ng-controller="comentNoticiasCtrl as c1">
+        <div class="listview-outlook ribbed-lighterBlue" data-role="listview"  >
+            <div class="list marked"  ng-repeat="item in c1.comentarios" >
+                <div class="list-content">
+                    <span class="list-title">{{item.usuario.nombre}}</span>
+                    <span class="list-subtitle">{{item.descripcion}}</span>                
+                    <div class="rating" data-role="rating" data-value="{{item.ranking}}"/>
+                </div>
+            </div>
+        </div>
+        <div ng-show="c1.usuario_id!=0">
+            <a href="#">Comentar {{usuario_id}}</a>
+            <h1>de</h1>
+        </div>
+    </div>
+        
+
+
 </div>

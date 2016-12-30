@@ -16,7 +16,7 @@ router.get('/registro', function (req, res, next) {
 });
 
 router.get('/', function (req, res, next) {
-    res.render('layout', { title: 'ntpDeporte' });
+    res.render('layout', { title: 'ntpDeporte', identificador: '0', usuarioNombre: 'Usuario' });
 });
 
 

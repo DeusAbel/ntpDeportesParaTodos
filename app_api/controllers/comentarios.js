@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var tcomentarios = mongoose.model('Comentario');
+var tusuarios = mongoose.model('Usuario');
 
 
 var sendJSONresponse = function(res, status, content) {
@@ -149,3 +150,26 @@ module.exports.comentariosDelete = function(req, res){
       }
     );
 };
+
+//Listar Comentarios de un noticia
+module.exports.comentariosNoticia = function(req, res){
+  console.log("Listando: "+ req.params.noticia_id);
+  if(req.params){
+    tcomentarios
+      .find({$and:[{flag:"A"},{noticia:req.params.noticia_id}]})
+      .exec(        
+        function(err, comentarios){
+          
+          tusuarios
+            .populate(comentarios,{path: "usuario"},function(err, comentarios){
+              var comentarioMap = {};
+              comentarios.forEach(function(comentario){
+                comentarioMap[comentario._id] = comentario;
+                console.log("Comentario:" +  comentario);
+              });        
+              sendJSONresponse(res, 201, comentarios);
+            });         
+      });
+  }  
+};
+
